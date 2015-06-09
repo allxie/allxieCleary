@@ -5,6 +5,10 @@ body {
 	padding:0px;
 	overflow-x:hidden;
 }
+.foo{
+	background-color: #7f8c8d;
+
+}
 
 article{
 	text-align: center;
@@ -15,7 +19,10 @@ article{
 .bump{
 	height: 80px;
 }
-
+.contactPage{
+	text-align: center;
+		font-size: 2em;
+}
 /*.theImage{
 	background-color: blue;
 }
@@ -31,6 +38,9 @@ article{
 	 -ms-transform: rotate(-5deg); /* IE 9 */
     -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
     transform: rotate(-5deg);
+}
+#downloadResume{
+	margin: 70px;
 }
 .theTitle{
 	/*background-color: green;*/
@@ -144,7 +154,7 @@ h6{
 			padding:15px 12px 30px 12px;
 			margin:1em 0 1em;
 			margin-right: 10px;
-			border:5px solid black;
+			border:3px solid black;
 			color:#333;
 			background:#fff;
 			-webkit-border-radius:20px;
@@ -181,7 +191,7 @@ h6{
 			padding:15px 12px 30px 12px;
 			margin:1em 0 1em;
 			margin-right: 10px;
-			border:5px solid black;
+			border:3px solid black;
 			color:#333;
 			background:#fff;
 			-webkit-border-radius:20px;

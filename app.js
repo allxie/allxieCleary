@@ -8,7 +8,7 @@ angular.module('myApp', [])
   $scope.partial = $scope.partials[0];
 
   $scope.contact = function(){
-  	$scope.title = "Contact";
+  	$scope.title = "Contact Me";
   	$scope.url = "contact.html";
   }
   $scope.projects = function(){
