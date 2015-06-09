@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Allxie Cleary</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.js"></script>
+	 	<script language="javascript" type="text/javascript" src="app.js"></script>
+
+</head>
+<body ng-app="myApp">
+  	<div ng-controller="MainCtrl">
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar-group">
+			<div class="container topbar">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">Allxie Cleary</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li ng-click="projects()"><a href="#">Projects</a></li>
+						<li ng-click="resume()"><a href="#">Resume</a></li>
+						<li ng-click="contact()"><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div> <!-- End nav -->
+		<div class="container">
+			<div class="row">
+				<!-- To get the content below the heading -->
+				<div class="bump row">
+					<div class="col-xs-12">
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<!--SPEECH BUBBLE -->
+					<div class="showit">
+						<div class="theImage col-xs-5 col-sm-3 col-md-3 col-md-offset-1 col-lg-2 col-lg-offset-2">
+							<img class="img-responsive" id="mebody" src="images/mebodyA.jpg" alt= "Well, that sucks. This page is going to be super boring without the photo." width="150px">
+						</div>
+						<div class="theBubble col-xs-6 col-xs-offset-1 col-sm-6 col-md-offset-1 col-sm-offset-1 col-md-4">
+							<!-- <div class="blank"> </div>
+							<div class="showbubble"> -->
+							<article class="triangle-border left">
+								<h1>Hi! I'm Allxie. </h1>
+								<h6>(the x is silent)</h6>
+								I am a full stack developer in San Francisco. I code for the environment and social justice.
+							</article>
+							<!-- <div class="row"> -->
+						</div>
+						<!-- The partials -->
+							<div class="theTitle col-lg-5 col-md-5 col-sm-6 col-xs-6">
+							    <div ng-bind="title">
+							    </div>
+							</div>
+							<!-- <div class="thePartial col-md-7 col-sm-4 col-xs-12"> -->
+							<div class="thePartial col-xs-12">
+							    <div ng-include="url">
+							    </div>
+							</div>
+							<!-- </div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+</body>
+</html>
+
+
