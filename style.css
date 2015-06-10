@@ -5,9 +5,22 @@ body {
 	padding:0px;
 	overflow-x:hidden;
 }
-.foo{
+/*.foo{
 	background-color: #7f8c8d;
 
+}*/
+.center{
+	text-align: center;
+}
+.imgCap{
+	margin: 20px 0px 10px 0px;
+	text-align: center;
+	font-size: 1.5em;
+}
+.prjDesc{
+	font-size: 1.2em;
+	text-align: left;
+	margin-top: 10px;
 }
 
 article{
@@ -132,6 +145,18 @@ h6{
 	border-color:transparent #fff;
 }
 
+/*FOR MEDIUM*/
+@media (max-width: 991px) {
+	.buildsChar{
+		margin-top: -250px;
+	}
+}
+@media (max-width: 768px) {
+	.buildsChar{
+		margin-top: 0px;
+	}
+}
+
 /*MOBILE VERSION!!! */
 /*Mobile version. Needs lots of work, but this is a start. */
 @media (max-width: 620px) {
@@ -164,6 +189,9 @@ h6{
 	}
 	#resume{
 		display: none;
+	}
+	.prjDesc{
+		text-align: left !important;
 	}
 }
 
@@ -198,6 +226,9 @@ h6{
 			-moz-border-radius:20px;
 			border-radius:20px;
 			font-size: 12px;
+	}
+	.prjDesc{
+		text-align: left !important;
 	}
 
 }
