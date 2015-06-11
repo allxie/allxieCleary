@@ -9,6 +9,22 @@ body {
 	background-color: #7f8c8d;
 
 }*/
+#errorMessage{
+	font-size: 2em;
+	color: red;
+}
+.hangH1{
+	font-family: courier;
+}
+
+.allHang{
+	border: 1px solid black;
+	padding-bottom: 20px;
+	margin-bottom: 100px;
+}
+.winLose{
+	margin-bottom: -20px;
+}
 .center{
 	text-align: center;
 }
@@ -45,12 +61,19 @@ article{
 .thePartial{
 	background-color: yellow !important;
 }*/
+.resume{
+	text-align: center;
+}
 #resume{
-	width: 95%;
+	max-width: 900px;
+	width: 100%;
 	border: 1px solid black;
-	 -ms-transform: rotate(-5deg); /* IE 9 */
-    -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
-    transform: rotate(-5deg);
+	/* -ms-transform: rotate(-5deg); /* IE 9 */
+    /*-webkit-transform: rotate(-5deg);  Chrome, Safari, Opera
+    transform: rotate(-5deg);*/
+}
+.topbar{
+	text-align: right;
 }
 #downloadResume{
 	margin: 70px;
@@ -160,9 +183,12 @@ h6{
 /*MOBILE VERSION!!! */
 /*Mobile version. Needs lots of work, but this is a start. */
 @media (max-width: 620px) {
-    body{
-      text-align: center;
-    }
+  body{
+    text-align: center;
+  }
+  .allHang{
+  	text-align: left;
+  }
 	article{
 		font-size: 17px !important;
 	}
@@ -187,9 +213,9 @@ h6{
 			border-radius:20px;
 			font-size: 12px;
 	}
-	#resume{
+/*	#resume{
 		display: none;
-	}
+	}*/
 	.prjDesc{
 		text-align: left !important;
 	}
@@ -198,6 +224,9 @@ h6{
 @media (max-width: 520px) {
   body{
     text-align: center;
+  }
+  .allHang{
+  	text-align: left;
   }
 	article{
 		font-size: 17px !important;

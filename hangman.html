@@ -1,0 +1,29 @@
+<div class="allHang col-xs-12 col-md-offset-4 col-md-5" ng-controller="HangManCtrl">
+  	<h1 class="winLose"><span ng-repeat="charl in hiddenCharls track by $index">
+  		 {{charl}}
+	</span></h1>
+	<h1 class="hangH1 winLose">
+		{{win}} {{lose}}<br>
+ 	</h1>
+ 	<h1 class="hangH1">
+ 		<span id="hangDraw">
+		</span>
+	</h1>
+	<br>
+	<div id="errorMessage" ng-bind="errorMessage"></div>
+  	<form ng-submit="addWord()">
+  		<input type="password" name="newWord" ng-model="newWord" placeholder="Enter a new word">
+  		<button> Add Word </button>
+  	</form>
+	<br>
+
+	Guessed:
+	<span ng-repeat="guess in guesses">
+		{{guess}}
+	</span>
+  	<form ng-submit="guessLetter()">
+  		<input type="text" name="letter" ng-model="letter" placeholder="Guess a letter...at your peril">
+  		<button>Submit</button>
+  	</form>
+
+ </div>
