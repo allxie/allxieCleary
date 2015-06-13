@@ -9,18 +9,45 @@ body {
 	background-color: #7f8c8d;
 
 }*/
+/*GAMES PAGE*/
+/*TicTacToe*/
+.box{
+  width:100px;
+  height:100px;
+}
+
+.v{
+  border-left:2px solid #000;
+  border-right:2px solid #000;
+}
+
+.h{
+  border-top:2px solid #000;
+  border-bottom:2px solid #000;
+}
+/*Dice*/
+.gameBox{
+	/*margin-bottom: 100px;*/
+	/*max-width: 350px;*/
+}
+.diceGame{
+	/*background-color: gray;*/
+}
+.result{
+	font-size: 5em;
+}
 #errorMessage{
 	font-size: 2em;
 	color: red;
 }
+
 .hangH1{
 	font-family: courier;
 }
 
 .allHang{
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	padding-bottom: 20px;
-	margin-bottom: 100px;
 }
 .winLose{
 	margin-bottom: -20px;
@@ -61,23 +88,27 @@ article{
 .thePartial{
 	background-color: yellow !important;
 }*/
-.resume{
-	text-align: center;
-}
+
+
 #resume{
 	max-width: 900px;
 	width: 100%;
 	border: 1px solid black;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	text-align:center;
 	/* -ms-transform: rotate(-5deg); /* IE 9 */
     /*-webkit-transform: rotate(-5deg);  Chrome, Safari, Opera
     transform: rotate(-5deg);*/
 }
+#downloadResume{
+	text-align: left;
+	/*margin: 70px;*/
+}
 .topbar{
 	text-align: right;
 }
-#downloadResume{
-	margin: 70px;
-}
+
 .theTitle{
 	/*background-color: green;*/
 	font-size: 3em;
@@ -168,10 +199,25 @@ h6{
 	border-color:transparent #fff;
 }
 
+
 /*FOR MEDIUM*/
+@media (min-width: 992px) {
+	.gameProject{
+		margin-top: -550px;
+	}
+}
+@media (min-width: 1200px) {
+	.gameProject{
+		margin-top: -470px;
+	}
+}
 @media (max-width: 991px) {
 	.buildsChar{
 		margin-top: -250px;
+	}
+	.gameBox{
+		margin-bottom: 0px;
+		/*max-width: 350px;*/
 	}
 }
 @media (max-width: 768px) {
@@ -186,6 +232,10 @@ h6{
   body{
     text-align: center;
   }
+  #downloadResume{
+	text-align: center;
+	/*margin: 70px;*/
+}
   .allHang{
   	text-align: left;
   }

@@ -1,29 +1,120 @@
-<div class="allHang col-xs-12 col-md-offset-4 col-md-5" ng-controller="HangManCtrl">
+<div class="allHang gameBox col-xs-12 col-md-6" ng-controller="HangManCtrl">
+  	<hr>
   	<h1 class="winLose"><span ng-repeat="charl in hiddenCharls track by $index">
   		 {{charl}}
 	</span></h1>
+	<br>
 	<h1 class="hangH1 winLose">
+		<!-- This line makes the guessed letters show up if no one has won yet. -->
+		<span ng-hide="win != ' ' || lose != ' '" ng-repeat="guess in guesses">
+			{{guess}}
+		</span>
 		{{win}} {{lose}}<br>
  	</h1>
- 	<h1 class="hangH1">
- 		<span id="hangDraw">
-		</span>
-	</h1>
+ 	<div class="row">
+	 	<div class="col-sm-4 col-sm-offset-4 col-md-12 col-md-offset-0">
+		 	<h1 class="hangH1">
+		 		<span id="hangDraw">
+				</span>
+			</h1>
+		</div>
+	</div>
 	<br>
+	<!-- ng-show="inGame === false" -->
 	<div id="errorMessage" ng-bind="errorMessage"></div>
-  	<form ng-submit="addWord()">
-  		<input type="password" name="newWord" ng-model="newWord" placeholder="Enter a new word">
-  		<button> Add Word </button>
-  	</form>
-	<br>
+	<div class="row">
+	  	<div class="col-sm-4 col-sm-offset-4 col-md-12 col-md-offset-0">
+		  	<form  ng-show="inGame === false" ng-submit="addWord()">
+		  		<input type="password" name="newWord" ng-model="newWord" placeholder="Enter a new word">
+		  		<button> Add Word </button>
+		  	</form>
+		</div>
 
-	Guessed:
-	<span ng-repeat="guess in guesses">
-		{{guess}}
-	</span>
-  	<form ng-submit="guessLetter()">
-  		<input type="text" name="letter" ng-model="letter" placeholder="Guess a letter...at your peril">
-  		<button>Submit</button>
-  	</form>
+		<br>
 
- </div>
+	<!-- This only shows if you've created a new word -->
+	  	<form ng-show="inGame === true " ng-submit="guessLetter()">
+	  		<input type="text" name="letter" ng-model="letter" placeholder="Guess a letter...at your peril">
+	  		<button>Submit</button>
+	  	</form>
+	  	</div>
+  	<hr>
+</div>
+
+
+ <!-- END HANGMAN. BEGIN DICE. -->
+<div ng-controller="DiceCtrl" class="diceGame gameBox col-xs-12 col-md-6">
+	<hr>
+	<div class="col-xs-5">
+		<img src="/images/bluedice.jpeg">
+	</div>
+	<!-- RESULTS -->
+	<div class="col-sm-3 col-sm-offset-1 col-xs-12">
+		<div class="row">
+			<div class="col-sm-12" ng-bind="individual" id="individual"> {{individual}} </div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-xs-12 result" ng-bind="rollsum" id="rollsum"> {{rollsum}} </div>
+		</div>
+	</div>
+	<!-- END RESULTS -->
+	<form>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-sm-offset-1">
+				<h3> How many dice? </h3>
+			</div>
+			<div class="col-xs-2 col-xs-offset-4 col-sm-2 col-sm-offset-0">
+				<input id="numDice" ng-model="numDice" type="number"  min="1" max="100000" placeholder="">
+			</div>
+		</div>
+		<br>
+		<div class = "row">
+			<div class="col-xs-12 col-sm-6 col-sm-offset-1">
+				<h3> How many sides on the dice?</h3>
+			</div>
+			<div class="col-xs-2 col-xs-offset-4 col-sm-2 col-sm-offset-0">
+				<input id="numSides" ng-model="numSides" type="number" min="2" max="1000" placeholder="" > <br>
+			</div>
+		</div>
+		<div class = "row">
+			<div class="col-xs-12 col-sm-6 col-sm-offset-1">
+				<h3>Add a modifier or leave this blank.</h3> Modifier will be added as a constant to the sum of your roll.
+			</div>
+			<div class="col-xs-2 col-xs-offset-4 col-sm-2 col-sm-offset-0">
+				<input id="constant" ng-model="constant" type="number"  min="-1000" max="1000" placeholder="">
+			</div>
+		</div>
+		<br>
+		<button type="button" ng-click="rollBut()" id="rollBut"> Roll </button>
+	</form>
+	<!-- </div> -->
+	<hr>
+</div>
+<!-- <div ng-controller="TacCtrl" class="tacGame gameBox col-xs-12 col-md-6">
+
+	<h1>Tic Tac Toe</h1>
+	    <div id="whoTurn" ng-bind="whoTurn"> It's X's turn. Click a square to make your move. </div>
+	    <div id='board'> -->
+	      <!-- the `&nbsp;` in each div is a non-breakable space.
+	           It prevents the div from collapsing. -->
+
+<!-- 	     	<table>
+				    <tr id="row1">
+				        <td class="box" ng-click="clicked()" ng-style="myStyle"></td>
+				        <td class="box v" ng-click="clicked()" ng-style="myStyle"></td>
+				        <td class="box" ng-click="clicked()" ng-style="myStyle"></td>
+				    </tr>
+      				<tr id="row2">
+				        <td class="box h" ng-click="clicked()" ng-style="myStyle"></td>
+				        <td class="box v h" ng-click="clicked()" ng-style="myStyle"></td>
+				        <td class="box h" ng-click="clicked()" ng-style="myStyle"></td>
+				    </tr>
+      				<tr id="row3">
+				        <td class="box" ng-click="clicked()" ng-style="myStyle"></td>
+				        <td class="box v" ng-click="clicked()" ng-style="myStyle"></td>
+				        <td class="box" ng-click="clicked()" ng-style="myStyle"></td>
+      				</tr>
+    		</table>
+	    </div> -->
+<!-- 	    <div id="resetButton">RESET </div>
+</div> -->
