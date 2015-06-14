@@ -12,10 +12,22 @@ body {
 /*GAMES PAGE*/
 /*TicTacToe*/
 .box{
+	font-size: 3em;
   width:100px;
   height:100px;
 }
-
+.btn{
+ -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+	border: none;
+	}
+.btn-default{
+ -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+	border:none;
+}
 .v{
   border-left:2px solid #000;
   border-right:2px solid #000;
@@ -238,6 +250,9 @@ h6{
 }
   .allHang{
   	text-align: left;
+  }
+  .tacGame{
+  	text-align: center;
   }
 	article{
 		font-size: 17px !important;

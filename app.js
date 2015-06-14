@@ -25,6 +25,9 @@ angular.module('myApp', [])
   }
 }])
 
+////////////////////////////////////////////////////////////////////
+
+
 .controller('HangManCtrl', ['$scope', function($scope){
   $scope.inGame = false;
   $scope.currentWord = "";
@@ -116,7 +119,11 @@ angular.module('myApp', [])
     }
   };
 }])
-.controller('DiceCtrl',['$scope', function($scope){
+
+////////////////////////////////////////////////////////////////////
+
+
+.controller('DiceCtrl', ['$scope', function($scope){
   console.log("tis loading");
 
   $scope.rollBut = function(){
@@ -188,17 +195,93 @@ angular.module('myApp', [])
       this.dice.push(die);
     };
   };
-
-
-  //end dice speciic stuff
-  // // // // // // // // // // // // // // // //
-
 }])
-.controller('TacCtrl',['$scope', function($scope){
+
+////////////////////////////////////////////////////////////////////
+
+.controller('TacCtrl', ['$scope', function($scope){
+  $scope.tacMessage = "It's X's turn. Click a square to make your move."
 //Listen for event on all squares of the board
+  var turnCount = 0;
+  var xSquares = [];
+  var oSquares = [];
+  var is_xTurn = true;
 
+  $scope.clicked = function(num){
+    // cretes a string with the number and string identifying the box
+    var boardLocation = "bind" + num;
+    //If that square hasn't already been clicked...
+    if ($scope[boardLocation] === undefined || $scope[boardLocation] === ""){
+    turnCount += 1;
+    console.log("turncount:: ", turnCount);
+    // pick which of the players turn it is
+    // Push the number into their array
+    // and change the text in the box
+      if (is_xTurn){
+        $scope[boardLocation] = "X";
+        if(winDetector(num, xSquares)){
+          win("X");
+          return;
+        };
+        xSquares.push(num);
+        $scope.tacMessage = "O's turn!"
 
+      } else{
+        $scope[boardLocation] = "O";
+        if(winDetector(num, oSquares)){
+          win("O");
+          return;
+        };
+        oSquares.push(num);
+        $scope.tacMessage = "X's turn!"
+      };
+      console.log("score", xSquares, oSquares);
+      //change the turn
+      is_xTurn = !is_xTurn;
+      //increment count
+      if (turnCount === 9){
+        tie();
+      }
+    }
+  };
 
+  var winDetector = function(num, arr){
+    //add three including the most recent
+    var third = num;
+    if (turnCount > 4){
+      for(var x = 0; x < arr.length-1; x++){
+        for (var y = x+1; y < arr.length; y++){
+          console.log("trying again");
+          if (arr[x]+arr[y]+third == 15){
+            console.log("found it!");
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+  var win = function(winner){
+    $scope.disableButtons = true;
+    $scope.tacMessage = winner+ " won! Click restart to play again."
+  }
+  var tie = function(){
+    $scope.disableButtons = true;
+    $scope.tacMessage = "Stalemate! Click restart to play again."
+  }
+
+  $scope.reset = function(){
+    turnCount = 0;
+    xSquares = [];
+    oSquares = [];
+    is_xTurn = true;
+    $scope.tacMessage = "It's X's turn. Click a square to make your move."
+    for (var i = 1; i < 10; i++) {
+      var boardLocation = "bind" + i;
+      $scope[boardLocation] = "";
+    };
+    $scope.disableButtons = false;
+  }
 
 }]);
 
