@@ -1,12 +1,16 @@
 angular.module('myApp', [])
 
 .controller('MainCtrl', ['$scope', function($scope) {
-
+$scope.url = "about.html";
+$scope.title = "About";
   $scope.partials =
   	[ { name: 'projects.html', url: 'projects.html'},
       { name: 'contact.html', url: 'contact.html'} ];
   $scope.partial = $scope.partials[0];
-
+ $scope.about = function(){
+    $scope.title = "About";
+    $scope.url = "about.html";
+  }
   $scope.contact = function(){
   	$scope.title = "Contact Me";
   	$scope.url = "contact.html";

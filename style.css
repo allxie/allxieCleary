@@ -11,6 +11,11 @@ body {
 }*/
 /*GAMES PAGE*/
 /*TicTacToe*/
+.aboutPage{
+	font-size: 1.2em;
+	margin-bottom: 100px;
+}
+
 .box{
 	font-size: 3em;
   width:100px;
