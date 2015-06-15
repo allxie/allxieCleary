@@ -236,6 +236,10 @@ h6{
 		margin-bottom: 0px;
 		/*max-width: 350px;*/
 	}
+	.aboutPage{
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
 }
 @media (max-width: 768px) {
 	.buildsChar{
