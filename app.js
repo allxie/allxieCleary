@@ -1,6 +1,39 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngRoute'])
 
-.controller('MainCtrl', ['$scope', function($scope) {
+// .config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
+//   $routeProvider
+//     .when("/", {
+//       templateUrl: 'about.html'
+//       ,controller: 'AboutCtrl'
+//     })
+//     .when("/about", {
+//       templateUrl: 'about.html'
+//       ,controller: 'AboutCtrl'
+//     })
+//     .when("/projects", {
+//       templateUrl: 'projects.html'
+//       ,controller: 'ProjectsCtrl'
+//     })
+//     .when("/resume", {
+//       templateUrl: 'resume.html'
+//       ,controller: 'MainCtrl'
+//     })
+//     .when("/contact", {
+//       templateUrl: 'contact.html'
+//       ,controller: 'ContactCtrl'
+//     })
+//     .when("/games", {
+//       templateUrl: 'hangman.html'
+//       ,controller: 'GamesCtrl'
+//     })
+//     .otherwise({
+//       redirectTo:"/"
+//       ,templateUrl: '/about.html'
+//     });
+//   // $locationProvider.html5Mode(true);
+// }])
+
+.controller('MainCtrl', ['$scope', "$location", function($scope, $location) {
 $scope.url = "about.html";
 $scope.title = "About";
   $scope.partials =
@@ -9,10 +42,12 @@ $scope.title = "About";
   $scope.partial = $scope.partials[0];
  $scope.about = function(){
     $scope.title = "About";
+    // $location.path( "/about" );
     $scope.url = "about.html";
   }
   $scope.contact = function(){
   	$scope.title = "Contact Me";
+    // $location.path( "/contact" );
   	$scope.url = "contact.html";
   }
   $scope.projects = function(){
@@ -30,7 +65,21 @@ $scope.title = "About";
 }])
 
 ////////////////////////////////////////////////////////////////////
+.controller('GamesCtrl', ['$scope', function($scope){
 
+}])
+.controller('AboutCtrl', ['$scope', function($scope){
+
+}])
+.controller('ResumeCtrl', ['$scope', function($scope){
+
+}])
+.controller('ProjectsCtrl', ['$scope', function($scope){
+
+}])
+.controller('ContactCtrl', ['$scope', function($scope){
+
+}])
 
 .controller('HangManCtrl', ['$scope', function($scope){
   $scope.inGame = false;
@@ -265,10 +314,12 @@ $scope.title = "About";
     }
     return false;
   }
+
   var win = function(winner){
     $scope.disableButtons = true;
     $scope.tacMessage = winner+ " won! Click restart to play again."
   }
+
   var tie = function(){
     $scope.disableButtons = true;
     $scope.tacMessage = "Stalemate! Click restart to play again."
@@ -286,6 +337,5 @@ $scope.title = "About";
     };
     $scope.disableButtons = false;
   }
-
 }]);
 

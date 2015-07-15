@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- ANGULAR -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-route.js"></script>
+
 	<!-- MY JAVASCRIPT -->
 	<script language="javascript" type="text/javascript" src="app.js"></script>
 	<!-- JQUERY -->
@@ -21,6 +23,10 @@
 	 	<!-- FAVICON -->
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<script type="text/javascript">
+//this is here to make plunkr work with AngularJS routing
+angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+</script>
 
 
 </head>
@@ -67,8 +73,9 @@
 							<div class="showbubble"> -->
 							<article class="triangle-border left">
 								<h1>Hi! I'm Allxie. </h1>
+								<!-- Add more break here -->
 								<h6>(the x is silent)</h6>
-								I am a full stack developer in San Francisco. I code for the environment and social justice.
+								I'm a full stack developer in San Francisco. I code for the environment and social justice.
 							</article>
 							<!-- <div class="row"> -->
 						</div>
@@ -81,6 +88,8 @@
 							<div class="thePartial col-xs-12">
 							    <div ng-include="url">
 							    </div>
+							    <!-- <div ng-view>
+							    </div> -->
 							</div>
 							<!-- </div> -->
 						</div>
